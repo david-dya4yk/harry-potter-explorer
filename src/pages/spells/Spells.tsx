@@ -11,8 +11,6 @@ const Spells = () => {
   if (error) return <div>Error: {error}</div>;
   if (!data) return <div>Not found</div>;
 
-  console.log(data);
-
   return (
     <div className={styles.spells}>
       <ul className={styles.spells__list}>

@@ -17,7 +17,6 @@ const CharacterDetails = () => {
 
   const { name, house, image, actor, dateOfBirth } = data[0];
 
-  console.log(data.length);
   return (
     <div className={styles.character}>
       <div className={styles.character__image}>
