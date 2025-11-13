@@ -1,9 +1,10 @@
+import { useRoutes } from 'react-router-dom';
+import { routes } from './routes.tsx';
+
 function App() {
-  return (
-    <>
-      <div>hello</div>
-    </>
-  );
+  const element = useRoutes(routes);
+
+  return element;
 }
 
 export default App;
