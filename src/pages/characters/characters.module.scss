@@ -1,0 +1,43 @@
+.characters {
+  padding-top: 15px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #131519;
+    overflow: hidden;
+    transition: border-color ease 0.2s;
+
+    &:hover {
+      border-color: #fb8332;
+    }
+
+    &:focus-within {
+      box-shadow: #fb8332 0 0 10px;
+      border-color: #fb8332;
+    }
+  }
+
+  &__info {
+    padding: 10px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
