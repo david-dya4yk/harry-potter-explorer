@@ -23,9 +23,11 @@ dd {
   margin-block-end: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -55,6 +57,11 @@ a:not([class]) {
   color: currentColor;
 }
 
+a {
+  text-decoration: none;
+  outline: transparent;
+}
+
 img,
 picture {
   max-width: 100%;
@@ -75,4 +82,10 @@ textarea:not([rows]) {
 
 :target {
   scroll-margin-block: 5ex;
+}
+
+body {
+  background: #1f1f21;
+  color: #ffffff;
+  margin: 0;
 }
