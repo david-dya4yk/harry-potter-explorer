@@ -1,0 +1,31 @@
+.spells {
+  padding-top: 15px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    border: 1px solid #fb8332;
+    background-color: #131519;
+    max-width: 250px;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    color: #fb8332;
+  }
+
+  &__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
