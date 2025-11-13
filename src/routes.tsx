@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
 import Characters from './pages/characters/Characters.tsx';
 import CharacterDetails from './pages/character-details/CharacterDetails.tsx';
-import Spells from './pages/Spells.tsx';
+import Spells from './pages/spells/Spells.tsx';
 import Layout from './components/layout/Layout.tsx';
 
 export const routes: RouteObject[] = [
