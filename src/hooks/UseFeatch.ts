@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-interface UseFetchResult {
-  data: unknown[] | null;
+interface UseFetchResult<T> {
+  data: T | null;
   loading: boolean;
   error: string | null;
 }
 
-export function useFetch(url: string): UseFetchResult {
-  const [data, setData] = useState<unknown[] | null>(null);
+export function useFetch<T>(url: string): UseFetchResult<T> {
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,7 +20,8 @@ export function useFetch(url: string): UseFetchResult {
         const res = await fetch(`${url}`);
 
         if (!res.ok) {
-          throw new Error(`Request failed: ${res.status}`);
+          setError(`Request failed: ${res.status}`);
+          return;
         }
 
         const json = await res.json();
