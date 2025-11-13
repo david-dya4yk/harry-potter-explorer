@@ -1,12 +1,14 @@
-import type { PropsWithChildren } from 'react';
+import { Outlet } from 'react-router-dom';
 import { Sidebar } from '../sidebar/Sidebar.tsx';
 import styles from './layout.module.scss';
 
-const Layout = ({ children }: PropsWithChildren) => {
+const Layout = () => {
   return (
     <div className={styles.layout}>
       <Sidebar />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };
