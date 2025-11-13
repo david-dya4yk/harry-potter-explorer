@@ -1,11 +1,10 @@
+import styles from './spells.module.scss';
+import { config } from '../../config.ts';
 import { useFetch } from '../../hooks/UseFeatch.ts';
 import type { Spell } from '../../types/spell.ts';
-import styles from './spells.module.scss';
 
 const Spells = () => {
-  const { data, loading, error } = useFetch<Spell[]>(
-    import.meta.env.VITE_API_URL_SPELLS
-  );
+  const { data, loading, error } = useFetch<Spell[]>(config.api.spells);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;

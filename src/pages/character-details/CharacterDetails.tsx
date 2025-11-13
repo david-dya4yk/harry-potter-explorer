@@ -2,11 +2,12 @@ import { Navigate, useParams } from 'react-router-dom';
 import styles from './character-details.module.scss';
 import { useFetch } from '../../hooks/UseFeatch.ts';
 import type { Character } from '../../types/character.ts';
+import { config } from '../../config.ts';
 
 const CharacterDetails = () => {
   const { id: paramsId } = useParams();
   const { data, loading, error } = useFetch<Character[]>(
-    `${import.meta.env.VITE_API_URL_CHARACTER_BY_ID}/${paramsId}`
+    `${config.api.character}/${paramsId}`
   );
 
   if (!paramsId) return <Navigate to="/characters" replace />;
