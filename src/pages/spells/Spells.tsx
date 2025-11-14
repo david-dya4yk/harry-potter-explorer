@@ -1,10 +1,9 @@
 import styles from './spells.module.scss';
-import { config } from '../../config.ts';
-import { useFetch } from '../../hooks/UseFeatch.ts';
 import type { Spell } from '../../types/spell.ts';
+import { useGetSpells } from '../../hooks/useGetSpells.ts';
 
 const Spells = () => {
-  const { data, loading, error } = useFetch<Spell[]>(config.api.spells);
+  const { data, loading, error } = useGetSpells();
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
