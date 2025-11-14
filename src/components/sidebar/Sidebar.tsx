@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import styles from './sidebar.module.scss';
-import Link from '../link/Link.tsx';
+import { Link } from 'react-router-dom';
 
 interface SidebarItem {
   href: string;
@@ -25,7 +25,9 @@ export const Sidebar = (): ReactElement => {
         {sidebarSections.map((item, index) => {
           return (
             <li key={index} className={styles.sidebar__item}>
-              <Link href={item.href} label={item.label} />
+              <Link className={styles.sidebar__link} to={item.href}>
+                {item.label}
+              </Link>
             </li>
           );
         })}
