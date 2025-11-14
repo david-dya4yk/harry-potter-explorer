@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './characters.module.scss';
-import { useFetch } from '../../hooks/UseFeatch.ts';
 import type { Character } from '../../types/character.ts';
-import { config } from '../../config.ts';
+import { useGetCharacters } from '../../hooks/useGetCharacters.ts';
 
 const CharactersPage = () => {
-  const { data, loading, error } = useFetch<Character[]>(config.api.characters);
+  const { data, loading, error } = useGetCharacters();
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;

@@ -1,14 +1,10 @@
 import { Navigate, useParams } from 'react-router-dom';
 import styles from './character-details.module.scss';
-import { useFetch } from '../../hooks/UseFeatch.ts';
-import type { Character } from '../../types/character.ts';
-import { config } from '../../config.ts';
+import { useGetCharacterById } from '../../hooks/useGetCharacterById.ts';
 
 const CharacterDetails = () => {
   const { id: paramsId } = useParams();
-  const { data, loading, error } = useFetch<Character[]>(
-    `${config.api.character}/${paramsId}`
-  );
+  const { data, loading, error } = useGetCharacterById(paramsId);
 
   if (!paramsId) return <Navigate to="/characters" replace />;
 
